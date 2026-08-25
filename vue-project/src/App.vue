@@ -1,6 +1,7 @@
 <template>
 <h3>{{ info }}</h3>
-<p> This is a paragraph </p>
+<p> {{ someInfo }} </p>
+<buttom type="button" @click="userData('Text')">Отправить</buttom>
 </template>
 
 <style scoped>
@@ -14,6 +15,19 @@ p {
 }
 </style>
 
-<script setup lang="ts">
-const info = "Title"
+<script lang="ts">
+
+export default {
+  data() {
+    return {
+      info: "Title",
+      someInfo: "Anons of message"
+    }
+  },
+  methods: {
+    userData(word = "New text") {
+      this.someInfo = word
+    }
+  }
+}
 </script>
